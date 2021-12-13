@@ -11,7 +11,7 @@ jobs:
     runs-on: windows-latest
     steps:
     - name: Health Report
-      uses: tomyput/sbsu@master
+      uses: tomyput/sbsu@main
       with:
         netid: ${{secrets.NETID}}
         password: ${{secrets.PASSWORD}}
