@@ -1,0 +1,33 @@
+name: 'sbsu'
+description: 'health report for SYSU'
+author: 'MHC'
+
+branding:
+  icon: thermometer
+  color: green
+
+inputs:
+  netid:
+    description: 'Your netid'
+    required: true
+  password:
+    description: 'Your password'
+    required: true
+  ocr_token:
+    description: 'Token of ocr web'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - shell: powershell
+      env:
+        NETID: ${{ inputs.netid }}
+        PASSWORD: ${{ inputs.password }}
+        OCR_TOKEN: ${{ inputs.ocr_token }}
+        PYTHONIOENCODING: utf-8
+        PYTHONLEGACYWINDOWSSTDIO: utf-8
+      run: |
+        pip install -r ${{ github.action_path }}\requirements.txt
+        Set-TimeZone -Name "China Standard Time"
+        python ${{ github.action_path }}\sbsu.py
