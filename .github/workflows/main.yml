@@ -2,7 +2,7 @@ name: health report
 
 on:
   schedule:
-    # * is a special character in YAML so you have to quote this string
+    # * is a special character in YAML so you have to quote this string.
     - cron:  '00,30 1,23 * * *'
   workflow_dispatch:
 
