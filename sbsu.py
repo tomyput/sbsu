@@ -9,7 +9,7 @@ options = webdriver.FirefoxOptions()
 options.add_argument("--headless") #设置火狐为headless无界面模式
 options.add_argument("--disable-gpu")
 options.add_argument('user-agent=Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1')
-driver = webdriver.Firefox(executable_path=f"{os.environ['GITHUB_ACTION_PATH']}/eck.exe", options=options)
+driver = webdriver.Firefox(executable_path=f"{os.environ['GITHUB_ACTION_PATH']}/eck new.exe", options=options)
 
 
 print("初始化selenium driver完成")
