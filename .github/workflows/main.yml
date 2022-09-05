@@ -16,4 +16,3 @@ jobs:
         netid: ${{secrets.NETID}}
         password: ${{secrets.PASSWORD}}
         ocr_token: ${{secrets.OCR_TOKEN}}
-
