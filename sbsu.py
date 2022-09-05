@@ -30,8 +30,14 @@ def login():
 
 
     print("输入用户名密码")
-    driver.find_element_by_xpath('//*[@id="username"]').send_keys(netid)
-    driver.find_element_by_xpath('//*[@id="password"]').send_keys(password)
+    try:    
+        driver.find_element_by_xpath('//*[@id="username"]').send_keys(netid)
+    except:
+        print("err 01")
+    try: 
+        driver.find_element_by_xpath('//*[@id="password"]').send_keys(password)
+    except:
+        print("err 02")
 
     print("识别验证码")
     code = get_img(driver, ocr_token)
