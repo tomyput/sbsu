@@ -25,9 +25,11 @@ def login():
     time.sleep(10)
 
     print("读取用户名密码")
-    netid = os.environ['NETID']
-    password = os.environ['PASSWORD']
-
+    try:
+        netid = os.environ['NETID']
+        password = os.environ['PASSWORD']
+    except:
+        print("err 00")
 
     print("输入用户名密码")
     try:    
